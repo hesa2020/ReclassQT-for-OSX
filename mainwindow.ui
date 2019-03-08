@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>774</width>
+    <height>462</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ReclassQT by Hesa</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/Icons/Resources/Icon/icon_96.png</normaloff>:/Icons/Resources/Icon/icon_96.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QTreeWidget" name="ClassesTree">
+       <attribute name="headerVisible">
+        <bool>false</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string notr="true">1</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QTreeView" name="NodesTree">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="uniformRowHeights">
+        <bool>true</bool>
+       </property>
+       <attribute name="headerVisible">
+        <bool>false</bool>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>774</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionAttachToProcess"/>
+    <addaction name="actionOpen_project"/>
+    <addaction name="actionSaveProject"/>
+   </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Options</string>
+    </property>
+    <addaction name="actionInsertBytes"/>
+   </widget>
+   <widget class="QMenu" name="menuProject">
+    <property name="title">
+     <string>Project</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuProcess">
+    <property name="title">
+     <string>Process</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuProcess"/>
+   <addaction name="menuProject"/>
+   <addaction name="menuOptions"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionAttachToProcess"/>
+   <addaction name="actionOpen_project"/>
+   <addaction name="actionSaveProject"/>
+   <addaction name="actionAddNewClass"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>RightToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionInsertBytes"/>
+   <addaction name="actionChangeToHex64"/>
+   <addaction name="actionChangeToHex32"/>
+   <addaction name="actionChangeToHex16"/>
+   <addaction name="actionChangeToHex8"/>
+   <addaction name="actionChangeToInt64"/>
+   <addaction name="actionChangeToInt32"/>
+   <addaction name="actionChangeToInt16"/>
+   <addaction name="actionChangeToInt8"/>
+  </widget>
+  <action name="actionAttachToProcess">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Images/Resources/Images/B32x32_Magnifier.png</normaloff>:/Images/Resources/Images/B32x32_Magnifier.png</iconset>
+   </property>
+   <property name="text">
+    <string>Attach to process...</string>
+   </property>
+  </action>
+  <action name="actionOpen_project">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Images/Resources/Images/B32x32_OpenProject.png</normaloff>:/Images/Resources/Images/B32x32_OpenProject.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open project...</string>
+   </property>
+  </action>
+  <action name="actionSaveProject">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Images/Resources/Images/B32x32_Save.png</normaloff>:/Images/Resources/Images/B32x32_Save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save Project...</string>
+   </property>
+  </action>
+  <action name="actionAddNewClass">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Images/Resources/Images/icons8-plus.png</normaloff>:/Images/Resources/Images/icons8-plus.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add new class...</string>
+   </property>
+  </action>
+  <action name="actionInsertBytes">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/Images/Resources/Images/B32x32_Byte.png</normaloff>:/Images/Resources/Images/B32x32_Byte.png</iconset>
+   </property>
+   <property name="text">
+    <string>Insert Bytes</string>
+   </property>
+   <property name="toolTip">
+    <string>Insert Bytes</string>
+   </property>
+  </action>
+  <action name="actionChangeToHex64">
+   <property name="text">
+    <string>HEX 64</string>
+   </property>
+   <property name="toolTip">
+    <string>Change type to Hex 64</string>
+   </property>
+  </action>
+  <action name="actionChangeToHex32">
+   <property name="text">
+    <string>HEX 32</string>
+   </property>
+   <property name="toolTip">
+    <string>Change type to Hex 32</string>
+   </property>
+  </action>
+  <action name="actionChangeToHex16">
+   <property name="text">
+    <string>HEX 16</string>
+   </property>
+   <property name="toolTip">
+    <string>Change type to Hex 16</string>
+   </property>
+  </action>
+  <action name="actionChangeToHex8">
+   <property name="text">
+    <string>HEX 8</string>
+   </property>
+   <property name="toolTip">
+    <string>Change type to Hex 8</string>
+   </property>
+  </action>
+  <action name="actionChangeToInt64">
+   <property name="text">
+    <string>INT 64</string>
+   </property>
+   <property name="toolTip">
+    <string>Change type to Int 64</string>
+   </property>
+  </action>
+  <action name="actionChangeToInt32">
+   <property name="text">
+    <string>INT 32</string>
+   </property>
+   <property name="toolTip">
+    <string>Change type to Int 32</string>
+   </property>
+  </action>
+  <action name="actionChangeToInt16">
+   <property name="text">
+    <string>INT 16</string>
+   </property>
+   <property name="toolTip">
+    <string>Change type to Int 16</string>
+   </property>
+  </action>
+  <action name="actionChangeToInt8">
+   <property name="text">
+    <string>INT 8</string>
+   </property>
+   <property name="toolTip">
+    <string>Change type to Int 8</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
