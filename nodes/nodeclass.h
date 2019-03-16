@@ -13,6 +13,7 @@ public:
     int RequestPosition;
 
     virtual QVariant GetData(int column);
+    virtual bool IsEditable(int column);
 
     virtual NodeType GetType() { return nt_class; }
     virtual unsigned long GetMemorySize()		{unsigned long size = 0; for (int i=0; i < Nodes.size();i++) size += Nodes[i]->GetMemorySize(); return size;}

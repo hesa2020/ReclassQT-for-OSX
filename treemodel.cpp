@@ -5,6 +5,7 @@
 
 #include <QStringList>
 #include <QColor>
+#include <QDebug>
 
 TreeModel::TreeModel(QObject *parent) : QAbstractItemModel(parent)
 {
@@ -30,6 +31,7 @@ QVariant TreeModel::data(const QModelIndex &index, int role) const
     {
         return QVariant();
     }
+    qDebug() << role;
     if (role == Qt::ForegroundRole)
     {
         BaseNode *node = static_cast<BaseNode*>(index.internalPointer());
@@ -68,6 +70,12 @@ QVariant TreeModel::data(const QModelIndex &index, int role) const
         return QVariant( QColor( Qt::black ) );
     }
 
+    if(role == Qt::EditRole)
+    {
+        //Return current value ??
+        return QVariant("TEST");
+    }
+
     if (role != Qt::DisplayRole)
     {
         return QVariant();
@@ -81,7 +89,11 @@ Qt::ItemFlags TreeModel::flags(const QModelIndex &index) const
 {
     if (!index.isValid())
         return 0;
-
+    BaseNode *item = static_cast<BaseNode*>(index.internalPointer());
+    if(item->IsEditable(index.column()))
+    {
+        return QAbstractItemModel::flags(index) | Qt::ItemIsEditable;
+    }
     return QAbstractItemModel::flags(index);
 }
 

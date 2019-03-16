@@ -39,3 +39,16 @@ QVariant NodeClass::GetData(int column)
     }
     return QVariant("");
 }
+
+bool NodeClass::IsEditable(int column)
+{
+    if(column == 0)
+    {
+        return (parentItem()->GetType() == nt_instance) ? false : true;
+    }
+    if(column == 2)
+    {
+        return true;
+    }
+    return false;
+}

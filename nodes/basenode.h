@@ -34,6 +34,7 @@ public:
     virtual QVariant GetData(int column){ return QVariant(""); }
     virtual unsigned long GetMemorySize() { return 0; }
     virtual NodeType GetType() { return NodeType::nt_base; }
+    virtual bool IsEditable(int column) { return false; }
 
     QString GetStringFromMemory( char* pMemory, int Length )
     {

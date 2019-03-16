@@ -32,7 +32,8 @@ SOURCES += \
     reclass.cpp \
     nodes/nodeclass.cpp \
     nodes/nodehex32.cpp \
-    nodes/nodeclassinstance.cpp
+    nodes/nodeclassinstance.cpp \
+    delegate.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -42,7 +43,8 @@ HEADERS += \
     nodes/nodeclass.h \
     classes.h \
     nodes/nodehex32.h \
-    nodes/nodeclassinstance.h
+    nodes/nodeclassinstance.h \
+    delegate.h
 
 FORMS += \
         mainwindow.ui

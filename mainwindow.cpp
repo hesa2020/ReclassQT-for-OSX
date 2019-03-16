@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->NodesTree->resizeColumnToContents(0);
     ui->NodesTree->header()->setStretchLastSection(false);
     ui->NodesTree->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    //SpinBoxDelegate* delegate = new SpinBoxDelegate();
+    //ui->NodesTree->setItemDelegate(delegate);
 }
 
 MainWindow::~MainWindow()
@@ -31,4 +33,10 @@ void MainWindow::on_ClassesTree_doubleClicked(const QModelIndex &index)
 {
     reclass->on_ClassesTree_doubleClicked(index);
     this->ui->NodesTree->reset();
+}
+
+void MainWindow::on_NodesTree_doubleClicked(const QModelIndex &index)
+{
+
+    this->ui->NodesTree->edit(index);
 }
